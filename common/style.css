@@ -1,0 +1,93 @@
+:root{
+    --bg-color: #0ad14d;
+    --other-color: #E46248;
+    
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--bg-color);
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+}
+
+.container{
+    width: 600px;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    margin: 50px auto;
+}
+
+img{
+    max-width: 100%;
+}
+
+ul{
+    list-style-type: none;
+}
+
+li{
+    margin-bottom: -30px;
+    margin-top: 60px;
+    font-size: 25px;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+a:hover{
+    color: var(--other-color);
+}
+
+.menu{
+   max-width: 100%;
+    display: flex;
+   justify-content: right;
+   padding: 20px;
+   font-size: 30px;
+   }
+/*tris*/
+
+.game{
+    display: flex;
+    flex-direction: row;
+ 
+}
+
+.info{
+    padding: 12px;
+    width: 100%;  
+}
+.gameArea{
+ padding: 12px;
+ position: relative;
+}
+/* ALERT */
+
+.game-alert{
+    position: absolute;
+    top: 0;
+    left:0;
+    right: 0;
+    bottom:0;
+  
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .game-alert-message{
+    font-size: 40px;
+    padding: 20px;
+    text-transform: capitalize;
+  
+    background-color: var(--other-color);
+  }
