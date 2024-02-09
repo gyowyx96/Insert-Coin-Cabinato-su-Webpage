@@ -19,8 +19,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  margin: 0;
 }
 .titolo{
   margin-top: 0px;
@@ -39,7 +37,7 @@ body {
 }
 
 /* Media query per adattare la griglia a schermi più piccoli */
-@media(max-width: 950px){
+@media(max-width: 1050px){
   :root{
     --cell-size: 16vw;
     --cell-gutter: 3vw;

@@ -2,6 +2,8 @@
 :root {
   --bg-color: #0ad14d;   /* Colore di sfondo principale */
   --accent-color: #E46248;   /* Colore di evidenziazione o accento */
+  height: 100%;
+  border: 5px solid var(--accent-color);
 }
 
 /* Reset di margini e padding e utilizzo del box-sizing per il modello di box */
@@ -17,6 +19,8 @@ body {
   font-family: 'Press Start 2P', cursive;
   line-height: 1.4;
   color: #ffffff;
+  border: 5px solid white;
+  height: 100%;
 }
 
 /* Stile del contenitore principale */
