@@ -1,66 +1,79 @@
-const celle = document.querySelectorAll('.cella'); //SELETTORE CELLE 
+// Seleziona tutte le celle del gioco e le assegna alla variabile "cells"
+const cells = document.querySelectorAll('.cell');
 
+// Variabile per tener traccia del turno attuale 
 let turn = 0;
-const segnoCella = [];
 
-for(let i=0; i < celle.length; i++ ){
-    const cella = celle[i]; //ARREY
-    
-    cella.addEventListener('click', function(){
-    
-        if(segnoCella[i]) {
-            return;
-        }
-        
-        turn++;
-       
-        let sign; 
-        if (turn % 2 === 0 ){
-            sign = 'o';
-        } else {
-            sign = 'x';
-        }
-        
-       cella.innerText = sign;
-       segnoCella[i] = sign;
-       
-       let haswon = vittoria();
+// Array per memorizzare i segni ('X' o 'O') associati a ciascuna cella
+const cellSigns = [];
 
-       if(haswon){
-        showAlert(`${sign} ha vinto!`);
-        } else if (turn === 9){
-        showAlert('pareggio');
-      }
+// Itera su tutte le celle del gioco
+for (let i = 0; i < cells.length; i++) {
+  const cell = cells[i];
 
-      })
+  // Aggiunge un listener per l'evento di click su ogni cella
+  cell.addEventListener('click', function () {
 
-}
-
-function vittoria (){
-    const haivinto = [
-        [0, 1, 2],
-        [3, 4, 5],
-        [6, 7, 8],
-        [0, 4, 8],
-        [2, 4, 6],
-        [0, 3, 6],
-        [1, 4, 7],
-        [2, 5, 8],
-    ];
-
-    for(let i = 0; i < haivinto.length; i++){
-        const combinazione = haivinto[i];
-
-        const a = combinazione [0];
-        const b = combinazione [1];
-        const c = combinazione [2];
-
-        if(segnoCella[a] && segnoCella[a] === segnoCella[b] && segnoCella[b] === segnoCella[c]){
-         return true;
-        } 
+    // Se la cella è già stata cliccata, esce dalla funzione
+    if (cellSigns[i]) {
+      return;
     }
-     
-    return false;
 
+    // Incrementa il turno
+    turn++;
+
+    // Determina il segno in base al turno attuale
+    let sign;
+    if (turn % 2 === 0) {
+      sign = 'O';
+    } else {
+      sign = 'X';
+    }
+
+    // Assegna il segno alla cella e lo memorizza nell'array
+    cell.innerText = sign;
+    cellSigns[i] = sign;
+
+    // Controlla se c'è una vittoria
+    let hasWon = checkVictory();
+
+    // Mostra un messaggio se c'è una vittoria o se il gioco è un pareggio
+    if (hasWon) {
+      showAlert(`${sign} Ha vinto!`);
+    } else if (turn === 9) {
+      showAlert('Pareggio');
+    }
+  });
 }
+
+// Funzione per controllare se c'è una vittoria
+function checkVictory() {
+  const winningCombinations = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6],
+  ];
+
+  // Itera sulle combinazioni vincenti
+  for (let i = 0; i < winningCombinations.length; i++) {
+    const combination = winningCombinations[i];
+
+    const a = combination[0];
+    const b = combination[1];
+    const c = combination[2];
+
+    // Controlla se i segni nelle celle corrispondono a una combinazione vincente
+    if (cellSigns[a] && cellSigns[a] === cellSigns[b] && cellSigns[b] === cellSigns[c]) {
+      return true; // Ritorna true se c'è una vittoria
+    }
+  }
+
+  return false; // Ritorna false se non c'è una vittoria
+}
+
 

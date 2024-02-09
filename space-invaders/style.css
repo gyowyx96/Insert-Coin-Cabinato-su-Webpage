@@ -1,5 +1,5 @@
 :root {
-    --cell-size: 40px;
+    --cell-size: 2.2vw;
     --grid-size: 15;
 }
 
@@ -9,15 +9,27 @@
     border: 2px solid white;
     display: flex;
     flex-wrap: wrap;
+    margin: auto;
 }
 
 #grid > div {
     width: var(--cell-size);
     height: var(--cell-size);
-    font-size: 8px;
+    font-size: 0.8vw;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: contain;    
+    background-size: contain; 
+     
+}
+
+.titolo{
+    margin-bottom: 0px;
+}
+
+@media (max-width:1080px){
+    :root{
+        --cell-size: 4vw;
+    }
 }
 
 .alien {

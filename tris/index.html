@@ -1,46 +1,47 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tris</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href= "../common/style.css">
-    <link rel= "stylesheet" href="style.css">
-    
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tris - Insert Coin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../common/style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
- <div class="Game">
-        <div class="info"> 
-            <h1>Tris</h1>
-            <p>Allinea i simboli e vinci!</p>
-                   
-        </div>
-        <div class="gameArea">
-            <div id="griglia">
-                <div class="cella"></div>
-                <div class="cella"></div>
-                <div class="cella"></div>
-                <div class="cella"></div>
-                <div class="cella"></div>
-                <div class="cella"></div>
-                <div class="cella"></div>
-                <div class="cella"></div>
-                <div class="cella"></div>
-            </div>       
-
-    </div>   
+ <!-- Contenitore principale della pagina -->
+ <div class="board">
+  <!-- Titolo del gioco -->
+  <h1 class="titolo">TRIS</h1>
+  <!-- Area di gioco contenente la griglia -->
+  <div class="game-area">
+    <!-- Griglia di gioco con celle vuote -->
+    <div id="grid">
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+    </div>
+  </div>
+  <!-- Informazioni di gioco -->
+  <div class="game-data">
+    <!-- Breve istruzione per il giocatore -->
+    <p>Allinea i simboli in verticale, orizzontale o diagonale</p>
+  </div>
+  <!-- Pulsante per tornare al menu principale -->
+  <div class="back">
+    <a class="back-text" href="../index.html">Back To Main Menù</a>
+  </div>
 </div>
-
-<div class=menu>
-<a href="../index.html"> Back to main menù</a>
-</div>
-<script src="../common/coms.js"> </script>
-<script src="script.js"></script>
+  <script src="../common/utils.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

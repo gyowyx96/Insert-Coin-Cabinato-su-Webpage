@@ -1,93 +1,135 @@
-:root{
-    --bg-color: #0ad14d;
-    --other-color: #E46248;
-    
+/* Definizione delle variabili di colore per una gestione flessibile e coerente */
+:root {
+  --bg-color: #0ad14d;   /* Colore di sfondo principale */
+  --accent-color: #E46248;   /* Colore di evidenziazione o accento */
 }
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Reset di margini e padding e utilizzo del box-sizing per il modello di box */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    background-color: var(--bg-color);
-    font-family: 'Press Start 2P', cursive;
-    color: white;
+/* Stile di base per il corpo della pagina */
+body {
+  background-color: var(--bg-color);
+  font-family: 'Press Start 2P', cursive;
+  line-height: 1.4;
+  color: #ffffff;
 }
 
-.container{
-    width: 600px;
-    flex-direction: column;
-    display: flex;
-    align-items: center;
-    margin: 50px auto;
+/* Stile del contenitore principale */
+.container {
+  width: 100%;
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 0 20px;
+  text-align: center; /* Centra gli elementi all'interno della container */
 }
 
-img{
-    max-width: 100%;
+/* Stile per la lista, rimuovendo i punti elenco e regolando i margini degli elementi */
+ul {
+  list-style-type: none;
 }
 
-ul{
-    list-style-type: none;
+/* Stile per gli elementi della lista, aggiungendo spaziatura tra di essi */
+li {
+  margin-bottom: 16px;
 }
 
-li{
-    margin-bottom: -30px;
-    margin-top: 60px;
-    font-size: 25px;
+/* Stile per i link, impostando il colore del testo e rimuovendo la sottolineatura */
+a {
+  color: #ffffff;
+  text-decoration: none;
 }
 
-a{
-    text-decoration: none;
-    color: white;
-}
-a:hover{
-    color: var(--other-color);
+/* Stile per i link al passaggio del mouse, modificando il colore di evidenziazione */
+a:hover {
+  color: var(--accent-color);
 }
 
-.menu{
-   max-width: 100%;
-    display: flex;
-   justify-content: right;
-   padding: 20px;
-   font-size: 30px;
-   }
-/*tris*/
+/* STRUTTURA BASE PAGINE DEI GIOCHI */
 
-.game{
-    display: flex;
-    flex-direction: row;
- 
+/* Stile per la board e la disposizione dei suoi elementi in colonna per una migliore visualizzazione su dispositivi mobili */
+.board {
+  display: flex;
+  flex-direction: column;
 }
 
-.info{
-    padding: 12px;
-    width: 100%;  
+/* Stile per le aree di gioco e di dati, impostando il padding e la larghezza al 100% */
+.game-area,
+.game-data {
+  padding: 12px;
+  width: 100%;
+  text-align: center;
 }
-.gameArea{
- padding: 12px;
- position: relative;
+
+/* Stile per l'header */
+h1 {
+  font-size: 24px;
+  margin-bottom: 16px;
 }
+
+/* Stile per il testo principale */
+p {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+/* Stile per le immagini, garantendo la massima larghezza e mantenendo l'aspetto originale */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+.titolo{
+  text-align: center;
+  font-size: 46px;
+  color: var(--accent-color);
+  margin-bottom: 65px;
+  margin-top: 20px;
+}
+
+/*Stile tasto di ritorno */
+.back{
+  font-size: large;
+  padding-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-text{
+  color: #E46248;
+}
+.back-text:hover{
+  color:#ffffff;
+}
+
 /* ALERT */
 
-.game-alert{
-    position: absolute;
-    top: 0;
-    left:0;
-    right: 0;
-    bottom:0;
-  
-  
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .game-alert-message{
-    font-size: 40px;
-    padding: 20px;
-    text-transform: capitalize;
-  
-    background-color: var(--other-color);
-  }
+/* Stile per l'alert, posizionandolo al centro della pagina */
+.game-alert {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Stile per il messaggio di alert */
+.game-alert-message {
+  font-size: 24px;
+  padding: 10px;
+  background-color: var(--accent-color);
+  cursor: pointer;
+}
+
+.game-alert-message:hover {
+  border: 2px solid #ffffff;
+}
