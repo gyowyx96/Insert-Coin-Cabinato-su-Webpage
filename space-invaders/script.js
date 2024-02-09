@@ -34,8 +34,7 @@ function checkForAlienWin() {
         ) {
             showAlert('ALIEN WINS');
             clearInterval(alienMoveIntVal);
-            alertElement.addEventListener('click', function () {
-                console.log('premuto');
+            addEventListener('click', function () {
                 // Ricarica la pagina quando l'alert viene cliccato
                 window.location.reload();
               });
@@ -139,7 +138,6 @@ buttons.forEach(function(button) {
             shoot();
         }
         else {moveSpaceship(button.className);
-            console.log(button.className);
         }
     });
 });
