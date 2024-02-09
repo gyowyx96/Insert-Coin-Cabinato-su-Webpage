@@ -176,7 +176,7 @@ function shoot() {
         cells[laserIdx].classList.add('laser');
     }
 
-    laserIntVal = setInterval(moveLaser, 250);
+    laserIntVal = setInterval(moveLaser, 100);
 }
 
 document.addEventListener('keydown', function(event){
