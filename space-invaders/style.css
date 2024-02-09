@@ -21,6 +21,17 @@
     background-size: contain; 
      
 }
+.mobile-controls{
+    width: calc(var(--cell-size) * var(--grid-size) + 4px);
+    display: flex;
+    align-items: center;
+    margin: auto;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.back{
+    padding: 10px;
+}
 
 .titolo{
     margin-bottom: 0px;

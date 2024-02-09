@@ -60,7 +60,7 @@ function removeAliens() {
 }
 
 // Movimento degli alieni
-let step = 1; // senso di marcia
+let step = 1; // senso di marcia 
 let direction = 'forward'; // backward
 function moveAliens() {
     const leftEdge = aliens[0] % size === 0; // true|false
@@ -102,35 +102,43 @@ drawAliens();
 
 alienMoveIntVal = setInterval(moveAliens, speed);
 
-
 // ASTRONAVE
 let spaceshipIdx = 217;
 cells[spaceshipIdx].classList.add('spaceship');
 
-function moveSpaceship(event) {
+function moveSpaceship(direction) {
     const leftEdge = spaceshipIdx % size === 0;
     const rightEdge = spaceshipIdx % size === size - 1;
 
     cells[spaceshipIdx].classList.remove('spaceship');
 
-    if(event.code === 'ArrowLeft' && !leftEdge) {
-        // Mi muovo a sinistra
+    if (direction === 'ArrowLeft' && !leftEdge) {
+        // Muovi a sinistra
         spaceshipIdx--;
-    } else if(event.code === 'ArrowRight' && !rightEdge) {
-        // Mi muovo a destra
-        spaceshipIdx++;
-    }
-
+    } else if (direction === 'ArrowRight' && !rightEdge) {
+        // Muovi a destra
+        spaceshipIdx++;} 
     cells[spaceshipIdx].classList.add('spaceship');
 }
 
-document.addEventListener('keydown', moveSpaceship);
+document.addEventListener('keydown', function(event) {
+    moveSpaceship(event.code);
+});
 
+const buttons = document.querySelectorAll('.mobile-controls button');
+
+buttons.forEach(function(button) {
+    button.addEventListener('click', function() {
+        if (button.className === 'shoot'){
+            shoot();
+        }
+        else {moveSpaceship(button.className);
+        }
+    });
+});
 
 // SHOOT
-function shoot(event) {
-    if(event.code !== "Space") return; 
-
+function shoot() {
     let laserIdx = spaceshipIdx;
     let laserIntVal = null;
     function moveLaser() {
@@ -168,8 +176,11 @@ function shoot(event) {
         cells[laserIdx].classList.add('laser');
     }
 
-    laserIntVal = setInterval(moveLaser, 200);
+    laserIntVal = setInterval(moveLaser, 250);
 }
 
-document.addEventListener('keydown', shoot);
-
+document.addEventListener('keydown', function(event){
+    if (event.code === 'Space'){
+        shoot();
+    }
+});
