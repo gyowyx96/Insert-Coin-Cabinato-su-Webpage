@@ -4,7 +4,7 @@ const scoreEl = document.querySelector('#score');
 const size = 15; // Ampiezza di un lato della griglia (15x15)
 const rxc = size * size; // righe * colonne
 const cells = [];
-const speed = 400;
+const speed = 350;
 
 // Truppa di alieni e rispettive posizioni
 const aliens = [
@@ -26,13 +26,6 @@ for(let i = 0; i < rxc; i++) {
     grid.appendChild(cell);
 }
 
-function checkForHumanWin() {
-    if(aliensKilled.length === aliens.length) {
-        showAlert('HUMAN WINS');
-        clearInterval(alienMoveIntVal);
-    }
-}
-
 function checkForAlienWin() {
     for(let i = 0; i < aliens.length; i++) {
         if(
@@ -41,7 +34,19 @@ function checkForAlienWin() {
         ) {
             showAlert('ALIEN WINS');
             clearInterval(alienMoveIntVal);
+            alertElement.addEventListener('click', function () {
+                console.log('premuto');
+                // Ricarica la pagina quando l'alert viene cliccato
+                window.location.reload();
+              });
         }
+    }
+}
+
+function checkForHumanWin() {
+    if(aliensKilled.length === aliens.length) {
+        showAlert('HUMAN WINS');
+        clearInterval(alienMoveIntVal);
     }
 }
 
@@ -130,9 +135,11 @@ const buttons = document.querySelectorAll('.mobile-controls button');
 buttons.forEach(function(button) {
     button.addEventListener('click', function() {
         if (button.className === 'shoot'){
+            console.log(button.className);
             shoot();
         }
         else {moveSpaceship(button.className);
+            console.log(button.className);
         }
     });
 });

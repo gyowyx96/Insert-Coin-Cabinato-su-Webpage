@@ -8,11 +8,11 @@
   width: var(--cell-size);        /* Larghezza della cella */
   border: 4px solid #ffffff;      /* Applica un bordo bianco di 4 pixel alle celle */
   cursor: pointer;                /* Cambia il cursore del mouse quando si passa sopra una cella */
-  font-size: 60px;                /* Dimensione del carattere*/
+  font-size: 3vw;                /* Dimensione del carattere*/
   display: flex;                  /* Utilizza il modello di layout flessibile */
   align-items: center;            /* Centra verticalmente il contenuto della cella */
   justify-content: center;         /* Centra orizzontalmente il contenuto della cella */
-  margin-bottom: var(--cell-gutter); /* Aggiunge uno spazio alla parte inferiore della cella */
+   /* Aggiunge uno spazio alla parte inferiore della cella */
 }
 
 body {
@@ -39,7 +39,10 @@ body {
 /* Media query per adattare la griglia a schermi più piccoli */
 @media(max-width: 1050px){
   :root{
-    --cell-size: 16vw;
+    --cell-size: 15vw;
     --cell-gutter: 3vw;
+  }
+  .cell{
+    font-size: 6vw;
   }
 }

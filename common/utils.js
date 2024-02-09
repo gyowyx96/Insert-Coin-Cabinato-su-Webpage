@@ -18,6 +18,7 @@ function showAlert(message) {
 
   // Aggiunge un listener per l'evento di click all'alert
   alertElement.addEventListener('click', function () {
+    console.log('premuto');
     // Ricarica la pagina quando l'alert viene cliccato
     window.location.reload();
   });

@@ -22,12 +22,7 @@
      
 }
 .mobile-controls{
-    width: calc(var(--cell-size) * var(--grid-size) + 4px);
-    display: flex;
-    align-items: center;
-    margin: auto;
-    justify-content: space-between;
-    margin-top: 20px;
+    opacity: 0;
 }
 .back{
     padding: 10px;
@@ -40,7 +35,28 @@
 @media (max-width:1080px){
     :root{
         --cell-size: 4vw;
+        --bg-color: #0ad14d;
     }
+    .mobile-controls{
+        opacity: 1;
+        width: calc(var(--cell-size) * var(--grid-size) + 4px);
+        display: flex;
+        align-items: center;
+        margin: auto;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+    button{
+        font-size: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      
+        border: none;
+        background: none;
+        color: var(--bg-color);
+    }
+    
 }
 
 .alien {
