@@ -134,7 +134,6 @@ const buttons = document.querySelectorAll('.mobile-controls button');
 buttons.forEach(function(button) {
     button.addEventListener('click', function() {
         if (button.className === 'shoot'){
-            console.log(button.className);
             shoot();
         }
         else {moveSpaceship(button.className);
