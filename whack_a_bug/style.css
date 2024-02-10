@@ -1,6 +1,8 @@
 :root{
   --cell-size: 7vw;
-  --cell-gutter: 3vw;
+  --cell-gutter: 4vw;
+  --bg-color: #0ad14d;   /* Colore di sfondo principale */
+  --accent-color: #E46248;   /* Colore di evidenziazione o accento */
 }
 
 #grid{
@@ -38,10 +40,42 @@
 h3{
   margin-bottom: 12px;
 }
-
+/*Media quary*/
 @media (max-width:900px){
   :root{
     --cell-size: 14vw;
     --cell-gutter :5vw;
   }
+}
+
+/*Stile riquadro di scelta*/
+
+.diff-select{
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  justify-content: center;
+  background-color: var(--accent-color);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;    
+}
+
+.diff-select div{
+  margin-bottom: 1vw;
+  font-size: 40px;
+}
+button{
+  background: none;
+  border: none;
+  font-size: 40px;
+  font-family: 'Press Start 2P', cursive;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover{
+  color: rgb(171, 175, 175);
 }
