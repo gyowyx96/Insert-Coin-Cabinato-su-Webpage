@@ -91,6 +91,10 @@ function gameStart(bugSpeed){
             cell.classList.remove('splat');
           }, 100);
         }
+        else {
+          score--;
+          scoreDisplay.innerText = score;
+        }
       })
     }
 
