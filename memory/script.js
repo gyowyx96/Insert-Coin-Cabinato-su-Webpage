@@ -89,6 +89,6 @@ function checkForWin() {
     // Se tutte le carte sono girate, mostra un messaggio di vittoria
     const flippedCards = document.querySelectorAll('.flipped');
     if (flippedCards.length === deck.length) {
-        showAlert(`Hai vinto facendo ${errors} errori`);
+        showAlert(`Hai vinto facendo ${errors} errori!`);
     }
 }
