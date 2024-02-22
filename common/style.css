@@ -1,7 +1,7 @@
 /* Definizione delle variabili di colore per una gestione flessibile e coerente */
 :root {
   --bg-color: #0ad14d;   /* Colore di sfondo principale */
-  --accent-color: #E46248;   /* Colore di evidenziazione o accento */
+  --accent-color: #ff5933;   /* Colore di evidenziazione o accento */
   height: 100%;
   border: 5px solid var(--accent-color);
 }
@@ -107,7 +107,7 @@ img {
 }
 
 .back-text{
-  color: #E46248;
+  color: #ff5933;
 }
 .back-text:hover{
   color:#ffffff;

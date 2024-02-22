@@ -2,7 +2,7 @@ const grid = document.querySelector('#grid');
 const errorCounter = document.querySelector('#error');
 
 // Array contenente i nomi delle carte
-const cards = ['alien', 'bug', 'ghost', 'rocket', 'spaceship', 'tiktac'];
+const cards = ['alien', 'bug', 'ghost', 'pad', 'spaceship', 'tiktac'];
 // Crea un mazzo di carte duplicando l'array 'cards'
 const deck = [...cards, ...cards];
 

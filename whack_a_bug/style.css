@@ -2,7 +2,7 @@
   --cell-size: 7vw;
   --cell-gutter: 4vw;
   --bg-color: #0ad14d;   /* Colore di sfondo principale */
-  --accent-color: #E46248;   /* Colore di evidenziazione o accento */
+  --accent-color: #ff5933;   /* Colore di evidenziazione o accento */
 }
 
 #grid{
