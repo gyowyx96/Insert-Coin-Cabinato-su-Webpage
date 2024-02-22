@@ -40,6 +40,7 @@ ul {
 /* Stile per gli elementi della lista, aggiungendo spaziatura tra di essi */
 li {
   margin-bottom: 16px;
+  font-size: 24px;
 }
 
 /* Stile per i link, impostando il colore del testo e rimuovendo la sottolineatura */
