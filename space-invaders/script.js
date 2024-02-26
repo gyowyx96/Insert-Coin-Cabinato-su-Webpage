@@ -21,7 +21,6 @@ scoreEl.innerText = score;
 // Costruisco le celle nella griglia
 for(let i = 0; i < rxc; i++) {
     const cell = document.createElement('div');
-    // cell.innerText = i; // Debug
     cells.push(cell);
     grid.appendChild(cell);
 }
