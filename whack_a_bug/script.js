@@ -23,17 +23,23 @@ const initialState = gameArea.innerHTML;
 `
 gameArea.innerHTML = gameArea.innerHTML + riquadroDiScelta;
 
+// Seleziona tutti i pulsanti all'interno degli elementi con classe 'diff-select'
 const buttons = document.querySelectorAll('.diff-select button');
-buttons.forEach(function(button){
-  button.addEventListener('click', function(){
+
+// Per ogni pulsante, aggiungi un listener per il click
+buttons.forEach(function(button) {
+  button.addEventListener('click', function() {
+    // Inizializza la variabile per la velocità dei bug
     let bugSpeed = 0;
-    switch(button.innerHTML){
+
+    // Utilizza uno switch statement basato sul testo del pulsante cliccato per impostare la velocità e rimuovere il selettore di difficoltà
+    switch (button.innerHTML) {
       case 'Easy':
-        resetGameArea();
         bugSpeed = 800;
+        resetGameArea();
         break;
       case 'Medium':
-        bugSpeed = 600; 
+        bugSpeed = 600;
         resetGameArea();
         break;
       case 'Hard':
@@ -41,10 +47,10 @@ buttons.forEach(function(button){
         resetGameArea();
         break;
     }
-    console.log(bugSpeed);
+    // Avvia il gioco con la velocità dei bug selezionata
     gameStart(bugSpeed);
-  })
-}) 
+  });
+});
 
 
 function resetGameArea(){
