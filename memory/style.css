@@ -1,4 +1,5 @@
 :root {
+    
     --card-size: 10vw; /* Utilizziamo le viewport units per adattarsi alle dimensioni dello schermo */
 }
 
@@ -25,8 +26,6 @@
       --card-size: 20vw; /* Cambia la dimensione delle carte a 20vw */
     }
   }
-
-
 
 .alien {
     background-image: url('./images/alien.png');
